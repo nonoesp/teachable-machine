@@ -113,11 +113,14 @@ class WsClient {
         }
     }
 
-   
+   // Helpers
+
+   send(message) {
+    this.ws.send(message);
+   }
 
 }
 
-import GLOBALS from './../config.js';
 import ReconnectingWebsocket from './lib/ReconnectingWebsocket.js';
 
 export default WsClient;

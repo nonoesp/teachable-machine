@@ -53,7 +53,8 @@ function init() {
     }
     
     // sg
-    GLOBALS.WsClient = new WsClient();
+    GLOBALS.ws = new WsClient();
+    GLOBALS.currentId = '';
 }
 
 window.addEventListener('load', init);
