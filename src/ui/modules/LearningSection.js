@@ -184,7 +184,8 @@ class LearningSection {
 			this.currentIndex = maxIndex;
 			let id = GLOBALS.classNames[this.currentIndex];
 			this.ledOn(id);
-			GLOBALS.outputSection.trigger(id);
+            GLOBALS.outputSection.trigger(id);
+            // TODO
 		}
 
 		for (let index = 0; index < 3; index += 1) {

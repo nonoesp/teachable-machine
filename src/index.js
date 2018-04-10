@@ -30,7 +30,6 @@ import BrowserUtils from './ui/components/BrowserUtils';
 import ReconnectingWebsocket from './sg/lib/ReconnectingWebsocket.js';
 import WsClient from './sg/WsClient.js';
 
-
 function init() {
 
 	// Shim for forEach for IE/Edge
@@ -54,9 +53,6 @@ function init() {
     }
     
     // sg
-    let host = 'smartgeometry.herokuapp.com';
-    let port = '80';
-    GLOBALS.websocket = new ReconnectingWebsocket('ws://' + host + ':' + port + '/ws', undefined, {});
     GLOBALS.WsClient = new WsClient();
 }
 

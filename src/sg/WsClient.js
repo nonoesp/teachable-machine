@@ -28,12 +28,14 @@
 class WsClient {
 
     constructor() {
-        
-        if(this.verbose) console.log('WsClient was created.');
 
         this.verbose = true;
-        this.ws = GLOBALS.websocket;
+        this.host = 'smartgeometry.herokuapp.com';
+        this.port = '80';
+
         this.setup();
+
+        if(this.verbose) console.log('WsClient was created.');
     }
 
     setup() {
@@ -50,6 +52,7 @@ class WsClient {
 
     setupWebsocket() {
         
+        this.ws = new ReconnectingWebsocket('ws://' + this.host + ':' + this.port + '/ws', undefined, {});
         this.ws.timeout = 1000;
 
         this.ws.addEventListener('open', () => {
@@ -115,6 +118,6 @@ class WsClient {
 }
 
 import GLOBALS from './../config.js';
-//import ReconnectingWebsocket from './lib/ReconnectingWebsocket.js';
+import ReconnectingWebsocket from './lib/ReconnectingWebsocket.js';
 
 export default WsClient;
